@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <title>Сторінку не знайдено</title>
+    <script>
+      // GitHub Pages serves this file for unknown paths.
+      // Hop 1: guess the project-site folder (https://user.github.io/repo/) and open its landing page.
+      // Hop 2: if that guess was wrong (user site at the domain root), open the root instead.
+      (function () {
+        var l = window.location;
+        if (/[?&]nf=1/.test(l.search)) {
+          l.replace("/");
+          return;
+        }
+        var base = "";
+        if (/\.github\.io$/.test(l.hostname)) {
+          var first = l.pathname.split("/").filter(Boolean)[0];
+          if (first) base = "/" + first;
+        }
+        l.replace(base + "/?nf=1");
+      })();
+    </script>
+  </head>
+  <body style="background:#1A2240;color:#EAE7DF;font-family:system-ui,sans-serif">
+    <p style="padding:2rem">Сторінку не знайдено. <a style="color:#CBB27A" href="/">Повернутися на головну</a></p>
+  </body>
+</html>
